@@ -2,66 +2,41 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  SiJavascript, SiPython, SiCplusplus, SiReact,
-  SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiGit,
-  SiGithub, SiLinux, SiPostman, SiHtml5,
+  SiReact,
 } from 'react-icons/si';
-import { FaJava, FaCode, FaDatabase, FaTools, FaBrain, FaCss3Alt } from 'react-icons/fa';
+import { FaCode, FaDatabase, FaTools, FaBrain } from 'react-icons/fa';
 import type { Variants } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'Programming Languages',
+    title: 'Languages',
     icon: FaCode,
     accent: 'from-amber-400 to-orange-500',
-    skills: [
-      { name: 'Java', icon: FaJava, level: 85 },
-      { name: 'JavaScript', icon: SiJavascript, level: 85 },
-      { name: 'Python', icon: SiPython, level: 80 },
-      { name: 'C++', icon: SiCplusplus, level: 70 },
-    ],
+    skills: ['C#', 'C++', 'Java', 'Python', 'JavaScript', 'SQL'],
   },
   {
-    title: 'Web Development (MERN)',
+    title: 'Frameworks & Libraries',
     icon: SiReact,
     accent: 'from-cyan-400 to-sky-500',
-    skills: [
-      { name: 'React.js', icon: SiReact, level: 85 },
-      { name: 'Node.js', icon: SiNodedotjs, level: 85 },
-      { name: 'Express.js', icon: SiExpress, level: 80 },
-      { name: 'HTML5', icon: SiHtml5, level: 90 },
-      { name: 'CSS3', icon: FaCss3Alt, level: 85 },
-    ],
+    skills: ['.NET', 'J2EE', 'Node.js', 'Express.js', 'React.js', 'Vue.js', 'Flask'],
   },
   {
     title: 'Databases',
     icon: FaDatabase,
     accent: 'from-emerald-400 to-lime-500',
-    skills: [
-      { name: 'MongoDB', icon: SiMongodb, level: 80 },
-      { name: 'MySQL', icon: SiMysql, level: 80 },
-    ],
+    skills: ['MySQL', 'SQL Server', 'MongoDB', 'Firebase'],
   },
   {
     title: 'Machine Learning',
     icon: FaBrain,
     accent: 'from-fuchsia-500 to-violet-500',
-    skills: [
-      { name: 'Machine Learning', icon: FaBrain, level: 75 },
-      { name: 'Scikit-learn', icon: FaBrain, level: 75 },
-      { name: 'Pandas', icon: FaBrain, level: 75 },
-    ],
+    skills: ['Machine Learning', 'Deep Learning', 'Natural Language Processing', 'Data Analysis', 'Data Preprocessing', 'Model Training', 'Model Evaluation'],
   },
   {
     title: 'Tools & Technologies',
     icon: FaTools,
     accent: 'from-slate-400 to-slate-500',
-    skills: [
-      { name: 'Git', icon: SiGit, level: 85 },
-      { name: 'GitHub', icon: SiGithub, level: 90 },
-      { name: 'Postman', icon: SiPostman, level: 80 },
-      { name: 'Linux', icon: SiLinux, level: 75 },
-    ],
+    skills: ['Docker', 'Jenkins', 'GitHub Actions', 'CI/CD Pipelines', 'AWS (EC2, IAM, S3)', 'GitHub', 'VS Code', 'Android Studio', 'Power BI', 'Postman'],
   },
 ];
 
@@ -106,7 +81,7 @@ export const Skills = () => {
               Technical <span className="text-gradient">Expertise</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-              Strong foundation in Java, full-stack web development (MERN), and machine learning with hands-on project experience.
+              Technologies and tools from my full-stack, backend, and machine learning project experience.
             </p>
           </motion.div>
 
@@ -127,29 +102,16 @@ export const Skills = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 space-y-4">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, x: -18 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: categoryIndex * 0.08 + skillIndex * 0.05 }}
+                      key={skill}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ delay: categoryIndex * 0.08 + skillIndex * 0.03 }}
+                      className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
                     >
-                      <div className="mb-2 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <skill.icon className="h-4 w-4 text-muted-foreground" />
-                          <span className="text-sm font-medium">{skill.name}</span>
-                        </div>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 overflow-hidden rounded-full bg-secondary">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : {}}
-                          transition={{ delay: categoryIndex * 0.08 + skillIndex * 0.05 + 0.2, duration: 0.8, ease: 'easeOut' }}
-                          className={`h-full rounded-full bg-gradient-to-r ${category.accent}`}
-                        />
-                      </div>
+                      {skill}
                     </motion.div>
                   ))}
                 </div>

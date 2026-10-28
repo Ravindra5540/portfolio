@@ -98,7 +98,7 @@ export const Contact = () => {
               Let's <span className="text-gradient">Connect</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-              I'm open to internship opportunities, collaboration on projects, and discussions related to software development and technology.
+              I'm currently seeking full-time software development opportunities and welcome conversations about roles, collaborations, and technology.
             </p>
           </motion.div>
 
@@ -137,7 +137,7 @@ export const Contact = () => {
 
               <div className="glass-card rounded-[28px] p-6 sm:p-7">
                 <p className="text-sm leading-7 text-muted-foreground">
-                  I am currently seeking internship opportunities where I can apply my full-stack development skills and gain real-world experience while contributing to impactful projects.
+                  I am looking for a full-time opportunity where I can apply my full-stack development skills, contribute to meaningful projects, and continue growing as a software developer.
                 </p>
               </div>
             </motion.div>

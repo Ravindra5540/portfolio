@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Award, BookOpen, Lightbulb } from 'lucide-react';
+import { GraduationCap, Award, Lightbulb } from 'lucide-react';
 import type { Variants } from 'framer-motion';
 
 const education = [
   {
     degree: 'B.Tech in Computer Engineering',
     institution: 'MIT Academy of Engineering, Pune',
-    year: '2022 - 2026',
-    cgpa: '8.71 CGPA',
-    current: true,
+    year: '2023 - 2026',
+    cgpa: '8.83 CGPA',
+    current: false,
   },
   {
     degree: 'Diploma in Computer Engineering',
@@ -62,7 +62,7 @@ export const About = () => {
               Passionate About <span className="text-gradient">Development & Innovation</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-              I am a Computer Engineering student with a strong foundation in full-stack development and problem-solving. I have hands-on experience in building web applications using MERN stack and Java technologies, along with a growing interest in AI/ML-based solutions.
+              I am a Computer Engineering graduate with a strong foundation in full-stack development and problem-solving. Through academic projects and internship experience, I have built web applications using Java, JavaScript, and modern web technologies. I am currently seeking full-time opportunities.
             </p>
           </motion.div>
 
@@ -110,39 +110,44 @@ export const About = () => {
                   <div className="rounded-xl bg-accent/10 p-2.5">
                     <Lightbulb className="h-5 w-5 text-accent" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold">Learning Mindset</h3>
+                  <h3 className="font-display text-xl font-semibold">Internship Experience</h3>
                 </div>
 
+                <p className="font-display text-base font-semibold">Software Developer Trainee</p>
+                <p className="mt-1 text-sm text-muted-foreground">Modi Innovations Pvt Ltd · 2 months</p>
                 <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-                  My journey from diploma to B.Tech has strengthened my technical foundation and problem-solving abilities. I continuously focus on improving my development skills by working on real-world projects and exploring modern technologies.
+                  Worked on full-stack web development using MongoDB, Express.js, React.js, and Node.js. Developed responsive interfaces, integrated REST APIs, and implemented CRUD operations using MongoDB.
                 </p>
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {[
-                    { icon: BookOpen, label: 'Self-Learner', desc: 'Always exploring new technologies' },
-                    { icon: Award, label: 'Gold Medalist', desc: 'Excellence in academics' },
-                  ].map((item, index) => (
-                    <div key={index} className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
-                      <item.icon className="mb-3 h-5 w-5 text-primary" />
-                      <p className="text-sm font-semibold">{item.label}</p>
-                      <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               <div className="glass-card rounded-[28px] p-6 sm:p-7">
                 <h3 className="font-display text-xl font-semibold">Current Focus</h3>
                 <ul className="mt-5 space-y-3">
                   {[
-                    'Building full-stack applications using MERN stack',
-                    'Developing backend systems with Node.js and Express',
-                    'Exploring Machine Learning and AI-based solutions',
-                    'Preparing for software development internships',
+                    'Seeking full-time software development opportunities',
+                    'Building full-stack applications and backend systems',
+                    'Applying machine learning and AI in practical projects',
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
                       <span className="mt-2 h-2 w-2 rounded-full bg-primary" />
                       <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="glass-card rounded-[28px] p-6 sm:p-7">
+                <h3 className="font-display text-xl font-semibold">Certifications</h3>
+                <ul className="mt-5 space-y-3">
+                  {[
+                    'AWS Certified Cloud Practitioner',
+                    'NPTEL: Introduction to Large Language Models (LLMs)',
+                    'CCNA: Introduction to Networks; Switching, Routing, and Wireless Essentials',
+                    'MERN Stack Application Development',
+                  ].map((certification) => (
+                    <li key={certification} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-primary" />
+                      <span>{certification}</span>
                     </li>
                   ))}
                 </ul>

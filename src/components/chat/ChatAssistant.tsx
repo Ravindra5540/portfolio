@@ -10,16 +10,22 @@ interface Message {
   content: string;
 }
 
-// UPDATED DATA (DETAILED + FORMATTED)
 const knowledgeBase = {
   skills: {
-    programming: ['Java', 'JavaScript', 'Python', 'C++'],
-    web: ['React.js', 'Node.js', 'Express.js', 'HTML5', 'CSS3'],
-    databases: ['MongoDB', 'MySQL'],
-    ml: ['Machine Learning', 'Scikit-learn', 'Pandas'],
-    tools: ['Git', 'GitHub', 'Linux', 'Postman'],
+    programming: ['C#', 'C++', 'Java', 'Python', 'JavaScript', 'SQL'],
+    web: ['.NET', 'J2EE', 'Node.js', 'Express.js', 'React.js', 'Vue.js', 'Flask'],
+    databases: ['MySQL', 'SQL Server', 'MongoDB', 'Firebase'],
+    ml: ['Machine Learning', 'Deep Learning', 'Natural Language Processing', 'Data Analysis', 'Data Preprocessing', 'Model Training', 'Model Evaluation'],
+    tools: ['Docker', 'Jenkins', 'GitHub Actions', 'CI/CD Pipelines', 'AWS (EC2, IAM, S3)', 'GitHub', 'VS Code', 'Android Studio', 'Power BI', 'Postman'],
   },
 
+  experience: 'Software Developer Trainee at Modi Innovations Pvt Ltd for 2 months. Worked with MongoDB, Express.js, React.js, and Node.js; developed responsive interfaces, integrated REST APIs, and implemented CRUD operations.',
+  certifications: [
+    'AWS Certified Cloud Practitioner',
+    'NPTEL: Introduction to Large Language Models (LLMs)',
+    'CCNA: Introduction to Networks; Switching, Routing, and Wireless Essentials',
+    'MERN Stack Application Development',
+  ],
   projects: [
     { 
       name: 'MediConnect', 
@@ -35,23 +41,23 @@ const knowledgeBase = {
       desc: `LifeFit is a full-stack health and fitness platform that helps users track wellness habits in one place.
 
 • Features: Workout, meal, water, and sleep tracking, progress insights, achievement system, and health coach chatbot.
-• Tech Stack: MongoDB, Express.js, Vue.js, Node.js, Firebase.
-• Highlights: Personalized health dashboard with secure authentication and responsive UI.`,
-      tech: ['MongoDB', 'Express.js', 'Vue.js', 'Node.js', 'Firebase'] 
+• Tech Stack: MongoDB, Express.js, Vue.js, Node.js, Gemini API.
+• Highlights: JWT authentication, REST APIs, interactive dashboards, and an AI-powered health coach.`,
+      tech: ['MongoDB', 'Express.js', 'Vue.js', 'Node.js', 'Gemini API']
     },
     { 
       name: 'Crop Recommendation System', 
       desc: `A machine learning-based system that helps farmers choose the most suitable crops.
 
 • Features: Predicts crops based on soil and environmental conditions.
-• Tech Stack: Python, Scikit-learn, Pandas, Random Forest.
-• Highlights: Uses ML model for accurate prediction and data-driven insights.`,
-      tech: ['Python', 'Scikit-learn', 'Pandas'] 
+• Tech Stack: Python, Flask, Machine Learning.
+• Highlights: Compared multiple models and deployed the best-performing crop prediction model.`,
+      tech: ['Python', 'Flask', 'Machine Learning']
     },
   ],
 
   education: {
-    current: 'B.Tech Computer Engineering (Pursuing)',
+    degree: 'B.Tech Computer Engineering, MIT Academy of Engineering, Pune (2023–2026), graduated with 8.83 CGPA',
     diploma: 'Diploma in Computer Engineering',
   },
 };
@@ -60,12 +66,24 @@ const suggestedQuestions = [
   "What are Ravindra's top skills?",
   "Tell me about his projects",
   "What is his education?",
+  "Is he open to full-time roles?",
   "Best project for a software developer role?",
 ];
 
-// RESPONSE LOGIC (IMPROVED FORMATTING)
 function generateResponse(question: string): string {
   const q = question.toLowerCase();
+
+  if (q.includes('full-time') || q.includes('full time') || q.includes('job') || q.includes('opportunit')) {
+    return `Ravindra has completed his B.Tech in Computer Engineering with an 8.83 CGPA and is seeking full-time software development opportunities.\n\n${knowledgeBase.experience}`;
+  }
+
+  if (q.includes('internship') || q.includes('experience')) {
+    return `💼 Experience:\n\n${knowledgeBase.experience}`;
+  }
+
+  if (q.includes('certification') || q.includes('certificate')) {
+    return `📜 Certifications:\n\n• ${knowledgeBase.certifications.join('\n• ')}`;
+  }
   
   if (q.includes('skill') || q.includes('technology')) {
     return `Ravindra has expertise in:
@@ -75,7 +93,7 @@ function generateResponse(question: string): string {
 • Databases: ${knowledgeBase.skills.databases.join(', ')}
 • Machine Learning: ${knowledgeBase.skills.ml.join(', ')}
 
-Strong in Java, MERN stack, and backend development.`;
+Strong in full-stack development, backend systems, and machine learning.`;
   }
   
   if (q.includes('project')) {
@@ -89,7 +107,7 @@ ${p.desc}`
   if (q.includes('education')) {
     return `🎓 Education:
 
-• ${knowledgeBase.education.current}
+• ${knowledgeBase.education.degree}
 • ${knowledgeBase.education.diploma}`;
   }
   
@@ -108,6 +126,7 @@ These projects demonstrate full-stack + backend + AI capabilities.`;
 • Skills
 • Projects
 • Education
+• Experience and certifications
 
 Try: "Tell me about his projects"`;
 }

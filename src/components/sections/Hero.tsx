@@ -44,7 +44,7 @@ export const Hero = () => {
           <div className="max-w-2xl">
             <motion.div variants={itemVariants} className="mb-5">
               <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                Open to Internship Opportunities
+                Open to Full-Time Opportunities
               </span>
             </motion.div>
 
@@ -60,14 +60,14 @@ export const Hero = () => {
               variants={itemVariants}
               className="mt-5 text-base text-muted-foreground sm:text-lg"
             >
-              Full Stack Developer
+              Computer Engineering Graduate · Full-Stack Developer
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base"
             >
-              I build scalable web applications using MERN stack and Java technologies. Passionate about problem-solving and exploring AI/ML to create impactful solutions.
+              B.Tech graduate with an 8.83 CGPA and hands-on experience building full-stack web applications. I am looking for full-time opportunities where I can contribute across web development, backend systems, and AI/ML projects.
             </motion.p>
 
             <motion.div
@@ -127,7 +127,7 @@ export const Hero = () => {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Focus</p>
-                  <p className="mt-3 text-lg font-semibold">MERN • Java • AI/ML</p>
+                  <p className="mt-3 text-lg font-semibold">Full-Time Roles</p>
                 </div>
                 <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Projects</p>
